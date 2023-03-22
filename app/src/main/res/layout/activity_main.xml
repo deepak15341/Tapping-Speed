@@ -11,12 +11,11 @@
     <TextView
         android:id="@+id/timer"
         android:layout_marginBottom="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:hint="Time Shown here"
+        android:hint="Time"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -24,8 +23,7 @@
         android:id="@+id/imageView"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/startimg" />
+        android:layout_height="200dp" />
 
     <LinearLayout
         android:layout_marginTop="40dp"
@@ -34,9 +32,11 @@
         android:layout_marginBottom="40dp">
         <TextView
             android:id="@+id/countup"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
             android:gravity="center"
             android:hint="Count Up"
             android:textStyle="bold"
@@ -45,28 +45,45 @@
 
         <TextView
             android:id="@+id/CountDown"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:hint="Count Down"
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"/>
     </LinearLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="124dp">
+
     <androidx.appcompat.widget.AppCompatButton
         android:layout_gravity="center_horizontal"
         android:id="@+id/appCompatButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:text="Click Here"
+        android:text="Tap Here"
         android:textStyle="bold"
-        android:textSize="30sp"
-        android:bottomRightRadius="40dp"
-        android:bottomLeftRadius="40dp"
-        android:topLeftRadius="40dp"
-        android:topRightRadius="40dp"
-        />
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="25sp"
+        android:layout_weight="1"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/appCompatButtonReset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="1"
+        android:text="Reset"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
