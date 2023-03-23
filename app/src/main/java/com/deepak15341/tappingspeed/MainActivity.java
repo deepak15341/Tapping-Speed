@@ -15,10 +15,10 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private CountDownTimer countDownTimer;
-    private long totaltime =5000;
+    private long totaltime =60000;
     private int remaining = 0,timeinterval =1000;
     int count=0;
-    int cu=0,cd=10,fcd=10;
+    int cu=0,cd=400,fcd=400;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
