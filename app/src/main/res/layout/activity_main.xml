@@ -94,7 +94,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="10dp"
         android:id="@+id/result"
-        android:text="Complete the taget before the timer ends"
+        android:text="Complete the target before the timer ends"
         android:gravity="center"
         android:textColor="#FF9800"
         android:textSize="30sp"
