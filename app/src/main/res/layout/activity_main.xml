@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
+    android:layout_gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -58,7 +59,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp">
+        android:layout_marginBottom="30dp">
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_gravity="center_horizontal"
@@ -85,5 +86,17 @@
         android:textSize="25sp"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/result"
+        android:text="Complete the taget before the timer ends"
+        android:gravity="center"
+        android:textColor="#FF9800"
+        android:textSize="30sp"
+        android:textStyle="italic"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

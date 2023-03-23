@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private long totaltime =5000;
     private int remaining = 0,timeinterval =1000;
     int count=0;
-    int cu=0,cd=1000;
+    int cu=0,cd=10,fcd=10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        TextView result =findViewById(R.id.result);
         TextView timer = findViewById(R.id.timer);
         ImageView image = findViewById(R.id.imageView);
         TextView CountUp = findViewById(R.id.countup);
@@ -45,37 +46,57 @@ public class MainActivity extends AppCompatActivity {
                     count=count+1;
                     CountDownTimer countDownTimer= new CountDownTimer(totaltime,timeinterval) {
                         @Override
+
                         public void onTick(long l) {
                             remaining = (int)l/1000;
                             timer.setText(remaining +"");
+                            result.setText("Go On,You can achieve!");
+
 
 
                         }
 
                         @Override
                         public void onFinish(){
-                            timer.setText(0+"");
-                            image.setImageDrawable(getDrawable(R.drawable.game_over));
-                            appCompatButton.setClickable(false);
-                            appCompatButton.setBackgroundColor(getResources().getColor(R.color.grey));
-                            appCompatButtonreset.setClickable(true);
-                            appCompatButtonreset.setBackgroundColor(getResources().getColor(R.color.orange));
+                            if(cu==fcd) {
+                                image.setImageDrawable(getDrawable(R.drawable.you_won));
+                                result.setText("Great");
+                                timer.setText(0 + "");
+                            }
+                            else {
+
+                                timer.setText(0 + "");
+                                result.setText("Better Luck Next Time");
+                                image.setImageDrawable(getDrawable(R.drawable.game_over));
+                                appCompatButton.setClickable(false);
+                                appCompatButton.setBackgroundColor(getResources().getColor(R.color.grey));
+                                appCompatButtonreset.setClickable(true);
+                                appCompatButtonreset.setBackgroundColor(getResources().getColor(R.color.orange));
+                            }
 
                         }
                     };
                     countDownTimer.start();
 
                 }
-                if (cu<=1000) {
-                    cu=cu+1;
-                    CountUp.setText(cu+"");
+                if(cu==fcd){
+                    image.setImageDrawable(getDrawable(R.drawable.you_won));
+                    result.setText("Great");
+                    appCompatButton.setClickable(false);
+                    appCompatButton.setBackgroundColor(getResources().getColor(R.color.grey));
+                    appCompatButtonreset.setClickable(true);
+                    appCompatButtonreset.setBackgroundColor(getResources().getColor(R.color.orange));
                 }
-                if (cd>=0) {
-                    cd=cd-1;
-                    CountDown.setText(cd+"");
+                else {
+                    if (cu <= fcd) {
+                        cu = cu + 1;
+                        CountUp.setText(cu + "");
+                    }
+                    if (cd >= 0) {
+                        cd = cd - 1;
+                        CountDown.setText(cd + "");
+                    }
                 }
-
-
             }
         });
         appCompatButtonreset.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 image.setImageDrawable(getDrawable(R.drawable.startimg));
                 count=0;
                 cu=0;
-                cd=1000;
+                cd=fcd;
                 appCompatButton.setClickable(true);
                 appCompatButtonreset.setBackgroundColor(getResources().getColor(R.color.grey));
                 CountDown.setText(0+"");
