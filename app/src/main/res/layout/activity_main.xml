@@ -12,11 +12,13 @@
     <TextView
         android:id="@+id/timer"
         android:layout_marginBottom="20dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="Time"
+        android:textColor="#FF9800"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -39,6 +41,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="5dp"
             android:gravity="center"
+            android:textColor="#FF9800"
             android:hint="Count Up"
             android:textStyle="bold"
             android:textSize="30sp"
@@ -52,6 +55,7 @@
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:hint="Count Down"
+            android:textColor="#FF9800"
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"/>

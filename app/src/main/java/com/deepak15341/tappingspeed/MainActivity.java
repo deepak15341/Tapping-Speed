@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         image.setImageDrawable(getDrawable(R.drawable.startimg));
         CountDown.setText(cd+"");
         CountUp.setText(cu+"");
+        timer.setText(0+"");
 
         appCompatButton.setOnClickListener(new View.OnClickListener() {
             @Override
